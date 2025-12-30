@@ -75,10 +75,7 @@ jobs:
         body: |
           Automatic release of geosite-cheburnet files.
           
-          - geosite-cheburnet.json: JSON format with ${{
-            # Подсчитываем количество доменов в JSON файле
-            steps.count_domains.outputs.count
-          }} domains
+          - geosite-cheburnet.json: JSON format with ${{ steps.count_domains.outputs.count }} domains
           - geosite-cheburnet.srs: Sing-box rule set format
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
