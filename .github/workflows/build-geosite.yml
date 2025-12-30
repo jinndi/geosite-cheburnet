@@ -64,7 +64,7 @@ jobs:
 
     - name: Convert to srs format
       run: |
-        sing-box rule-set convert -o geosite-cheburnet.srs geosite-cheburnet.json
+        sing-box rule-set compile geosite-cheburnet.json -o geosite-cheburnet.srs
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
