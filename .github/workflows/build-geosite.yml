@@ -69,22 +69,6 @@ jobs:
       run: |
         sing-box rule-set compile geosite-cheburnet.json -o geosite-cheburnet.srs
 
-    - name: Create Release
-      uses: softprops/action-gh-release@v2
-      with:
-        tag_name: v${{ github.run_number }}.${{ github.run_id }}.${{ github.run_attempt }}
-        name: Release ${{ github.run_number }}.${{ github.run_id }}.${{ github.run_attempt }}
-        files: |
-          geosite-cheburnet.json
-          geosite-cheburnet.srs
-        body: |
-          Automatic release of geosite-cheburnet files.
-          
-          - geosite-cheburnet.json: JSON format with ${{ steps.count_domains.outputs.count }} domains
-          - geosite-cheburnet.srs: Sing-box rule set format
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Count domains
       id: count_domains
       run: |
@@ -95,3 +79,20 @@ jobs:
         print(len(data['rules'][0]['domain_suffix']))
         ")
         echo "count=$COUNT" >> $GITHUB_OUTPUT
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v1.${{ github.run_number }}
+        name: Релиз 1.${{ github.run_number }}
+        files: |
+          geosite-cheburnet.json
+          geosite-cheburnet.srs
+        body: |
+          Автоматическая публикация файлов geosite-cheburnet
+          Всего доменов: ${{ steps.count_domains.outputs.count }}
+          - geosite-cheburnet.json: JSON формат
+          - geosite-cheburnet.srs: Sing-box rule_set формат
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
