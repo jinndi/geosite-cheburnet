@@ -25,3 +25,8 @@
 `yo` https://www.yota.ru/whitelist
 
 `sm` https://sbermobile.ru/upload/services-unblocked.pdf
+
+### Ссылка на последню актуальную версию:
+```
+https://github.com/jinndi/geosite-cheburnet/releases/latest/download/geosite-cheburnet.srs
+```
