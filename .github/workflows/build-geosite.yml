@@ -67,7 +67,7 @@ jobs:
         sing-box rule-set compile geosite-cheburnet.json -o geosite-cheburnet.srs
 
     - name: Create Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
       with:
         tag_name: v${{ github.run_number }}.${{ github.run_id }}.${{ github.run_attempt }}
         name: Release ${{ github.run_number }}.${{ github.run_id }}.${{ github.run_attempt }}
