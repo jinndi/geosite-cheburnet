@@ -1,0 +1,95 @@
+name: Build Geosite
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Process domain files
+      run: |
+        python << 'EOF'
+        import os
+        import json
+        
+        # Собираем все домены из файлов
+        domains = set()
+        
+        for filename in os.listdir('geosite-cheburnet'):
+          if filename.endswith('.txt'):
+            with open(f'geosite-cheburnet/{filename}', 'r', encoding='utf-8') as f:
+              for line in f:
+                line = line.strip()
+                # Пропускаем пустые строки и комментарии
+                if line and not line.startswith('#'):
+                  domains.add(line)
+        
+        # Сортируем домены
+        domain_list = sorted(list(domains))
+        
+        # Создаем JSON-структуру
+        result = {
+          "version": 3,
+          "rules": [{
+            "domain_suffix": domain_list
+          }]
+        }
+        
+        # Записываем в файл
+        with open('geosite-cheburnet.json', 'w', encoding='utf-8') as f:
+          json.dump(result, f, ensure_ascii=False, indent=2)
+        
+        print(f"Обработано {len(domain_list)} доменов")
+        EOF
+
+    - name: Install sing-box
+      run: |
+        # Получаем последнюю версию sing-box
+        VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep "tag_name" | cut -d '"' -f 4)
+        wget https://github.com/SagerNet/sing-box/releases/download/$VERSION/sing-box-$VERSION-linux-amd64.tar.gz
+        tar -xzf sing-box-$VERSION-linux-amd64.tar.gz
+        sudo mv sing-box*/sing-box /usr/local/bin/
+        chmod +x /usr/local/bin/sing-box
+
+    - name: Convert to srs format
+      run: |
+        sing-box rule-set convert -o geosite-cheburnet.srs geosite-cheburnet.json
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: v${{ github.run_number }}
+        name: Release ${{ github.run_number }}
+        files: |
+          geosite-cheburnet.json
+          geosite-cheburnet.srs
+        body: |
+          Automatic release of geosite-cheburnet files.
+          
+          - geosite-cheburnet.json: JSON format with ${{
+            # Подсчитываем количество доменов в JSON файле
+            steps.count_domains.outputs.count
+          }} domains
+          - geosite-cheburnet.srs: Sing-box rule set format
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Count domains
+      id: count_domains
+      run: |
+        COUNT=$(python -c "
+        import json
+        with open('geosite-cheburnet.json', 'r', encoding='utf-8') as f:
+          data = json.load(f)
+        print(len(data['rules'][0]['domain_suffix']))
+        ")
+        echo "count=$COUNT" >> $GITHUB_OUTPUT

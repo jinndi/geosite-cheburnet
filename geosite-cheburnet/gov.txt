@@ -1,0 +1,35 @@
+#1 Федеральные
+government.ru
+gov.ru
+
+#1 Сервисы Госуслуг
+gosuslugi.ru
+gu-st.ru
+
+#1 Здравоохранение
+emias.info
+mgfoms.ru
+
+#1 Образование
+edu.ru
+
+#1 Избирком
+cikrf.ru
+izbirkom.ru
+
+#1 Региональные
+mos.ru
+mosreg.ru
+spb.ru
+sevastopol.ru
+sev.ru
+
+#1-4 Прочие
+cbr.ru
+nalog.ru
+moskva-putinu.ru
+er.ru
+kremlin.ru
+gpmdi.ru
+pochta.ru
+goskey.ru

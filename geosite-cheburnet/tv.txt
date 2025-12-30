@@ -1,0 +1,44 @@
+#4 Первый канал
+1tv.ru
+
+#4 НТВ
+ntv.ru
+
+#4 RT
+rt.com
+
+#4 ОТР
+otr-online.ru
+
+#4 ТВЦ
+tvc.ru
+
+#4 ТВ3
+tv3.ru
+
+#4 Мир
+mir24.tv
+
+#4 ТНТ
+tnt-online.ru
+
+#4 СТС
+ctc.ru
+
+#4 Спас
+spastv.ru
+
+#4 Пятый канал
+5-tv.ru
+
+#4 Рен ТВ
+ren.tv
+
+#4 Пятница
+friday.ru
+
+#4 Домашний
+domashniy.ru
+
+#4 Муз ТВ
+muz-tv.ru

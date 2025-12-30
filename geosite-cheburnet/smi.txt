@@ -1,0 +1,42 @@
+#1 Дзен
+dzen.ru
+dzeninfra.ru
+
+#2 Комсомольская правда
+kp.ru
+
+#2 РИА Новости
+ria.ru
+
+#2 РБК
+rbc.ru
+
+#2 Газета.ру
+gazeta.ru
+
+#2 Лента.ру
+lenta.ru
+
+#2 Rambler
+rambler.ru
+
+#3 Известия
+iz.ru
+
+#3 ТАСС
+tass.ru
+
+#4 Аргументы и Факты
+aif.ru
+
+#4 Российская газета
+rg.ru
+
+#4 Ведомости
+vedomosti.ru
+
+#4 Московский комсомолец
+mk.ru
+
+#bl россиясегодня.рф
+xn--c1acbl2abdlkab1og.xn--p1ai

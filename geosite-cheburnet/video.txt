@@ -1,0 +1,29 @@
+#1 Rutube
+rutube.ru
+rutubelist.ru
+rtbcdn.ru
+
+#1 Конопоиск
+kinopoisk.ru
+kinopoisk-ru.clstorage.net
+
+#3 онлайн-кинотеатр Окко
+okko.tv
+
+#4 онлайн-кинотеатр «Иви»
+ivi.ru
+
+#4 онлайн-кинотеатр «Винк»
+wink.ru
+
+#4+mts онлайн-кинотеатр «Кион»
+kion.ru
+
+#bl билайн тв
+beeline.tv
+
+#yo PREMIER
+premier.one
+
+#mf+yo+mt+sm YAPPY (ritmmedia)
+yappy.media

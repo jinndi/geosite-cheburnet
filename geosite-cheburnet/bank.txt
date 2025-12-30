@@ -1,0 +1,32 @@
+#1 Официальный сайт платёжной системы Мир
+mirpayonline.ru
+
+#2 Альфа-Банк
+alfabank.ru
+
+#4 Московская биржа
+moex.com
+
+#mt МТС банк
+mtsbank.ru
+
+#mf+mt+yo+sm СБП
+nspk.ru
+
+# Почта банк
+pochtabank.ru
+pchtbnk.ru
+
+# Газпромбанк
+gazprombank.ru
+
+# Сбербанк
+sber.ru
+sberbank.ru
+
+# Т-банк
+tbank.ru
+cdn-tinkoff.ru
+
+# ВТБ
+vtb.ru

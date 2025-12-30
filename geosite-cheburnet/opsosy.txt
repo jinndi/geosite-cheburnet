@@ -1,0 +1,29 @@
+#1 Билайн
+beeline.ru
+
+#1 Мегафон
+megafon.ru
+
+#1 МТС
+mts.ru
+mymts.ru
+mts-link.ru
+urentbike.ru
+
+#1 Ростелеком
+rt.ru
+
+#1 Теле 2
+t2.ru
+
+#3 Сбермобайл
+sbermobile.ru
+
+#3 Эр-Телеком
+ertelecom.ru
+
+#4 Мотив
+motivtelecom.ru
+
+#yo Yota
+yota.ru
