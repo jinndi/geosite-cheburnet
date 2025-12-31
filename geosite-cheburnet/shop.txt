@@ -33,16 +33,16 @@ metro-cc.ru
 #4 строительный торговый дом «Петрович»
 petrovich.ru
 
-#mf+bl+mt+yo+sm Магнит
+#all Магнит
 magnit.ru
 
-#mf+bl+mt+yo+sm Азбука вкуса
+#all Азбука вкуса
 av.ru
 
-#mf+bl+mt+yo+sm Дикси
+#all Дикси
 dixy.ru
 
-#mf+bl+mt+yo+sm Пятёрочка
+#all Пятёрочка
 5ka.ru
 5post.market
 chizhik.club
@@ -74,10 +74,10 @@ x5q.ru
 x5static.net
 x5w.ru
 
-#mf+bl+mt+yo Перекрёсток
+#all Перекрёсток
 perekrestok.ru
 
-#mf+bl+mt+yo Чижик
+#all Чижик
 chizhik.club
 
 #mf+yo Много лосося

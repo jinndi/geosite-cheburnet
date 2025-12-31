@@ -49,7 +49,7 @@ topdelivery.ru
 #sm Сравни.Ру
 sravni.ru
 
-# RuStore
+#mt RuStore
 rustore.ru
 
 # Замер скорости интернета

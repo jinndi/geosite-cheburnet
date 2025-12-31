@@ -22,11 +22,13 @@ flypobeda.ru
 #4 сервис краткосрочной аренды автомобилей «Ситидрайв»
 citydrive.ru
 
-#mts «Путешествия по России»
+#mt «Путешествия по России»
 travelrussia.ru
 
+#mt Московский туристический портал
 travel2moscow.com
 
+#mt Отелло
 otello.ru
 
 

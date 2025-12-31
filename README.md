@@ -20,13 +20,16 @@
 
 `t2` https://msk.t2.ru/help/article/internet-access-in-blocked-areas
 
-`mt` https://media.mts.ru/internet/210833-belyj-spisok-interneta
+`mt` https://moskva.mts.ru/personal/vse-akcii/mobilnaya-svyaz/spisok-dostupnyh-servisov
 
 `yo` https://www.yota.ru/whitelist
 
 `sm` https://sbermobile.ru/upload/services-unblocked.pdf
 
+`all` упомянуто у всех ОПСОСов
+
 ### Ссылка на последню актуальную версию:
+
 ```
 https://github.com/jinndi/geosite-cheburnet/releases/latest/download/geosite-cheburnet.srs
 ```
