@@ -14,6 +14,8 @@
 
 `4` https://digital.gov.ru/news/belyj-spisok-dostupnyh-pri-ogranicheniyah-interneta-sajtov-vnov-rasshiren
 
+`5` https://digital.gov.ru/news/v-belyj-spisok-vklyucheny-novye-servisy
+
 `mf` https://moscow.megafon.ru/offline_services/#whitelist
 
 `bl` https://moskva.beeline.ru/whitelist-unlock/

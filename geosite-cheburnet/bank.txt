@@ -28,5 +28,8 @@ sberbank.ru
 tbank.ru
 cdn-tinkoff.ru
 
-# ВТБ
+#5 ВТБ
 vtb.ru
+
+#5 ПСБ банк
+psbank.ru

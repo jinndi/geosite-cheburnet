@@ -40,3 +40,9 @@ mk.ru
 
 #bl россиясегодня.рф
 xn--c1acbl2abdlkab1og.xn--p1ai
+
+#5 издание «Коммерсант»
+kommersant.ru
+
+# издание «Парламентская газета»
+pnp.ru

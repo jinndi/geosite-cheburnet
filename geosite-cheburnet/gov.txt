@@ -24,7 +24,7 @@ spb.ru
 sevastopol.ru
 sev.ru
 
-#1-4 Прочие
+#1-5 Прочие
 cbr.ru
 nalog.ru
 moskva-putinu.ru
@@ -33,3 +33,4 @@ kremlin.ru
 gpmdi.ru
 pochta.ru
 goskey.ru
+giszhkh.ru
