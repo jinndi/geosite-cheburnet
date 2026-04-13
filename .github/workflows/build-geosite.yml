@@ -26,6 +26,7 @@ jobs:
         
         # Собираем все домены из файлов
         domains = set()
+        total_lines = 0
         
         for filename in os.listdir('geosite-cheburnet'):
           if filename.endswith('.txt'):
@@ -34,6 +35,7 @@ jobs:
                 line = line.strip()
                 # Пропускаем пустые строки и комментарии
                 if line and not line.startswith('#'):
+                  total_lines += 1
                   domain = line.lower().strip()
                   if domain.endswith('.'):
                     domain = domain[:-1]
@@ -70,7 +72,7 @@ jobs:
         with open('geosite-cheburnet.json', 'w', encoding='utf-8') as f:
           json.dump(result, f, ensure_ascii=False, indent=2)
         
-        print(f"Итог {len(unique_domains)} уникальных доменов (из {len(domains)} исходных)")
+        print(f"Итог {len(unique_domains)} уникальных доменов (из {total_lines} исходных)")
         EOF
 
     - name: Install sing-box
