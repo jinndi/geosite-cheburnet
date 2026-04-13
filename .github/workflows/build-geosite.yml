@@ -93,7 +93,7 @@ jobs:
         import json
         with open('geosite-cheburnet.json', 'r', encoding='utf-8') as f:
           data = json.load(f)
-        print(len(unique_domains))
+        print(len(data['rules'][0]['domain_suffix']))
         ")
         echo "count=$COUNT" >> $GITHUB_OUTPUT
 
