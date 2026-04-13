@@ -46,11 +46,13 @@ jobs:
         domain_list = sorted(list(domains))
         
         # Удаляем поддомены (оставляем только родительские домены)
+        # Сначала получаем все потенциальные родительские домены (самые короткие)
+        all_domains_set = set(domain_list)
         unique_domains = []
         for d in domain_list:
           is_subdomain = False
-          for u in unique_domains:
-            if d.endswith('.' + u):
+          for u in all_domains_set:
+            if d != u and d.endswith('.' + u):
               is_subdomain = True
               break
           if not is_subdomain:
@@ -68,7 +70,7 @@ jobs:
         with open('geosite-cheburnet.json', 'w', encoding='utf-8') as f:
           json.dump(result, f, ensure_ascii=False, indent=2)
         
-        print(f"Обработано {len(unique_domains)} доменов (из {len(domain_list)} уникальных)")
+        print(f"Итог {len(unique_domains)} уникальных доменов (из {len(domains)} исходных)")
         EOF
 
     - name: Install sing-box
