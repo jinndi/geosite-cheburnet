@@ -34,16 +34,33 @@ jobs:
                 line = line.strip()
                 # Пропускаем пустые строки и комментарии
                 if line and not line.startswith('#'):
-                  domains.add(line)
+                  domain = line.lower().strip()
+                  if domain.endswith('.'):
+                    domain = domain[:-1]
+                  if domain.startswith('www.'):
+                    domain = domain[4:]
+                  if domain:
+                    domains.add(domain)
         
         # Сортируем домены
         domain_list = sorted(list(domains))
+        
+        # Удаляем поддомены (оставляем только родительские домены)
+        unique_domains = []
+        for d in domain_list:
+          is_subdomain = False
+          for u in unique_domains:
+            if d.endswith('.' + u):
+              is_subdomain = True
+              break
+          if not is_subdomain:
+            unique_domains.append(d)
         
         # Создаем JSON-структуру
         result = {
           "version": 3,
           "rules": [{
-            "domain_suffix": domain_list
+            "domain_suffix": unique_domains
           }]
         }
         
@@ -51,7 +68,7 @@ jobs:
         with open('geosite-cheburnet.json', 'w', encoding='utf-8') as f:
           json.dump(result, f, ensure_ascii=False, indent=2)
         
-        print(f"Обработано {len(domain_list)} доменов")
+        print(f"Обработано {len(unique_domains)} доменов (из {len(domain_list)} уникальных)")
         EOF
 
     - name: Install sing-box
@@ -76,7 +93,7 @@ jobs:
         import json
         with open('geosite-cheburnet.json', 'r', encoding='utf-8') as f:
           data = json.load(f)
-        print(len(data['rules'][0]['domain_suffix']))
+        print(len(unique_domains))
         ")
         echo "count=$COUNT" >> $GITHUB_OUTPUT
 
