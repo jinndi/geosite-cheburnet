@@ -39,7 +39,7 @@ jobs:
                     domain = domain[:-1]
                   if domain.startswith('www.'):
                     domain = domain[4:]
-                  if domain:
+                  if domain and "." in domain:
                     domains.add(domain)
         
         # Сортируем домены
