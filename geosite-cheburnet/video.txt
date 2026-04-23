@@ -22,7 +22,7 @@ kion.ru
 #bl билайн тв
 beeline.tv
 
-#yo PREMIER
+#7+yo PREMIER
 premier.one
 
 #mf+yo+mt+sm YAPPY (ritmmedia)

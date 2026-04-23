@@ -17,7 +17,9 @@
 `4` https://digital.gov.ru/news/belyj-spisok-dostupnyh-pri-ogranicheniyah-interneta-sajtov-vnov-rasshiren
 
 `5` https://digital.gov.ru/news/v-belyj-spisok-vklyucheny-novye-servisy
-
+`6` ! не включено: https://digital.gov.ru/news/v-belyj-spisok-vklyucheny-servisy-distanczionnogo-kontrolya-urovnya-sahara-v-krovi
+``
+`7`  https://digital.gov.ru/news/servisov-dostupnyh-pri-ogranicheniyah-mobilnogo-interneta-stalo-bolshe
 `mf` https://moscow.megafon.ru/offline_services/#whitelist
 
 `bl` https://moskva.beeline.ru/whitelist-unlock/

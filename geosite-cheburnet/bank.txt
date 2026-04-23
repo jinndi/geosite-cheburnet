@@ -33,3 +33,7 @@ vtb.ru
 
 #5 ПСБ банк
 psbank.ru
+
+#7 Газпромбанк
+gazprombank.ru
+gpb.ru

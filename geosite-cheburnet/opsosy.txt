@@ -27,3 +27,9 @@ motivtelecom.ru
 
 #yo Yota
 yota.ru
+
+#7 операторы связи «ВТБ-Мобайл» и Next mobile
+vtbmobile.ru
+nextmobile.ru
+next-mobile.ru
+webim.ru

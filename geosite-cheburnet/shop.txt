@@ -116,3 +116,12 @@ burgerkingrus.ru
 
 #5 маркетплейс «Мегамаркет»
 megamarket.ru
+
+#7 гипермаркеты «Лента» и «Окей»
+lenta.com
+onetarget.ru
+okmarket.ru
+
+#7 сеть предприятий быстрого питания «Додо Пицца»
+dodopizza.ru
+dodostatic.net

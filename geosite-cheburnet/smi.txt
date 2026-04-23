@@ -46,3 +46,6 @@ kommersant.ru
 
 # издание «Парламентская газета»
 pnp.ru
+
+#7 онлайн-СМИ Sport24
+sport24.ru
