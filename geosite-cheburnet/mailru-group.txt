@@ -1,0 +1,227 @@
+# https://github.com/v2fly/domain-list-community/blob/master/data/mailru-group
+
+# VK Group, formerly known as Mail.ru Group, a Russian technology company
+#include:dzen
+dzeninfra.ru
+
+#include:ok
+apiok.ru
+insideok.ru
+odkl.ru
+odnoklasniki.by
+odnoklasniki.ua
+odnoklassniki.am
+odnoklassniki.by
+odnoklassniki.co.ee
+odnoklassniki.eu
+odnoklassniki.lv
+odnoklassniki.ru
+odnoklassniki.tj
+ok.me
+ok.ru
+okl.lt
+oktech.ru
+
+# CDN
+okcdn.ru
+full:st-ok-pts.cdn-vk.ru
+full:st-ok.cdn-vk.ru
+
+#include:vk
+# Use `geosite:mailru-group` if you want to match the entire VK Group
+mvk.com
+vk.cc
+vk.com
+vk.design
+vk.link
+vk.ru
+vkontakte.com
+vkontakte.ru
+
+# CDNs
+cdn-vk.net
+cdn-vk.ru
+userapi.com
+userapi.ru
+vk-cdn.me
+vk-cdn.net
+vk-portal.net
+vkcache.com
+vkcdnservice.com
+vkcloud-static.ru
+vktech-static.ru
+vkuser.net
+vkusercdn.ru
+vkuserphoto.ru
+vkuseraudio.com
+vkuseraudio.net
+vkuseraudio.ru
+vkuserlive.com
+vkuserlive.net
+vkuservideo.com
+vkuservideo.net
+vkuservideo.ru
+
+# VK Messenger
+vk.me
+vkmessenger.app
+vkmessenger.com
+
+# VK Pay
+vkpay.app
+vkpay.com
+vkpay.io
+vkpay.ru
+
+armgs.team
+bargipsy.com
+boom.ru
+boosty.to
+donationalerts.com
+hrtek.ru
+koddobra.ru
+lovina.app
+mail.ru
+mcs.st
+mediumquality.ru
+memealerts.com
+movika.com
+sportmail.ru
+summerstage.ru
+tamtam.chat
+tech-mail.ru
+vk-apps.com
+vk-apps.ru
+vk-records.ru
+vk-stadium.ru
+vk.company
+vk.kz
+vk.team
+vkclips.app
+vkcs.cloud
+vkfest.ru
+vkgo.app
+vklive.app
+vkvideo.ru
+vkworkspace.kz
+yclients.com
+
+# IDN ccTLD
+xn--80asgb.xn--p1ai # майл.рф
+xn--e1aigb.xn--p1ai # мейл.рф
+
+# Unknown-purpose domains with DGA subdomains
+justveryok.com
+keyboardmen.com
+rabbitcounter.com
+sayeasy.eu
+
+# CDNs
+appsmail.ru
+attachmail.ru
+attachmy.com
+bizmrg.com
+cdnmail.ru
+datacloudmy.com
+imgsmail.ru
+mpgw-my.com
+mradx.net
+mrgcdn.ru
+mycdn.me
+mytopf.com
+smailru.net
+staticmy.com
+vmailru.net
+
+# Ecosystem
+
+## Additional mail.ru mail domains
+bk.ru
+inbox.ru
+internet.ru
+list.ru
+xmail.ru
+
+## All Cups
+cups.online
+gamescup.ru
+mlbootcamp.ru
+russiandesigncup.ru
+
+## Education
+algoritmika.org
+code-class.ru
+gb.ru
+lerna.ru
+skbx.pro # Probably a CDN
+skillbox.pro
+skillbox.ru
+skillfactory.ru
+tetrika-school.ru
+uchi.ru
+umschool.net
+yaklass.ru
+
+## ESforce
+cybersport.ru
+epicevents.gg
+esforce.com
+esforce.ru
+ruhub.tv
+
+## Messenger MAX
+max.ru
+oneme.ru
+sferum-dev.ru
+sferum.ru
+
+## My.com, myMail
+dev-my.com
+my.com
+
+## My.Games (formally left Russian market)
+dev-my.games
+it-territory.com
+knightspeak.com
+my.games
+pixonic.com
+prod-my.games
+
+## RuStore
+rustore.ru
+rustore.team
+rustore.tv
+
+## Tarantool
+tarantool.io
+tarantoolplus.ru
+
+## Telega, an alternative Telegram client
+### CAUTION: SUSPECTED SPYWARE
+### For details see: https://dontusetelega.lol/analysis
+aodahl.com
+dahl.su
+dahlmessenger.com
+telega.info
+telega.me
+tusco.ru
+
+## UMA (United Media Agency), music distributor
+uma.media
+
+## Viqeo
+viqeo.tv
+viqeotv.com
+
+## VK Cloud KZ (joint venture with QazCloud)
+vkcloud-static.kz
+vkcloud.kz
+
+## VK Play
+vkplay-arena.ru
+vkplay.ru
+vkplay.live
+
+## Youla
+youla.io
+youla.ru
