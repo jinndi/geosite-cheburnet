@@ -24,8 +24,7 @@ oktech.ru
 
 # CDN
 okcdn.ru
-full:st-ok-pts.cdn-vk.ru
-full:st-ok.cdn-vk.ru
+cdn-vk.ru
 
 #include:vk
 # Use `geosite:mailru-group` if you want to match the entire VK Group
