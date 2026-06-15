@@ -33,7 +33,7 @@ jobs:
         stats = {"total_lines": 0}
         
         # --- УДАЛЕННЫЙ РЕПОЗИТОРИЙ v2fly ---
-        REMOTE_BASE_URL = "https://github.com/v2fly/domain-list-community/raw/refs/heads/master/data/"
+        REMOTE_BASE_URL = "https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/"
 
         def download_and_process(url):
             try:

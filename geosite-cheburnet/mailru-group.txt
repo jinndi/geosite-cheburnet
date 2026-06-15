@@ -1,6 +1,6 @@
 # VK Group, formerly known as Mail.ru Group, a Russian technology company
 
-https://github.com/v2fly/domain-list-community/blob/master/data/mailru-group
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/mailru-group
 
 #include:dzen
 dzeninfra.ru

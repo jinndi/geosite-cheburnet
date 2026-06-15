@@ -1,17 +1,17 @@
 #1 Маркетплейс Ozon
-https://github.com/v2fly/domain-list-community/blob/master/data/ozon
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/ozon
 ozon.ru
 ozone.ru
 ozonusercontent.com
 
 #1 Маркетплейс Wildberries
-https://github.com/v2fly/domain-list-community/blob/master/data/wildberries
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/wildberries
 wb.ru
 wildberries.ru
 wbbasket.ru
 
 #1 Avito
-https://github.com/v2fly/domain-list-community/blob/master/data/avito
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/avito
 avito.ru
 avito.st
 
@@ -46,7 +46,7 @@ av.ru
 dixy.ru
 
 #all Пятёрочка
-https://github.com/v2fly/domain-list-community/blob/master/data/x5
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/x5
 5ka.ru
 5post.market
 chizhik.club

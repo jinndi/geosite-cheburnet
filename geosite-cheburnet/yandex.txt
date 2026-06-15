@@ -1,4 +1,4 @@
-https://github.com/v2fly/domain-list-community/blob/master/data/yandex
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/yandex
 
 #1 Сервисы Яндекса
 
