@@ -5,18 +5,18 @@ beeline.ru
 megafon.ru
 
 #1 МТС
-https://github.com/v2fly/domain-list-community/blob/master/data/mts
+https://github.com/v2fly/domain-list-community/blob/master/data/mts-ru
 mts.ru
 mymts.ru
 mts-link.ru
 urentbike.ru
 
 #1 Ростелеком
-https://github.com/v2fly/domain-list-community/rostelecom
+https://github.com/v2fly/domain-list-community/blob/master/data/rostelecom
 rt.ru
 
 #1 Теле 2
-https://github.com/v2fly/domain-list-community/t2-ru
+https://github.com/v2fly/domain-list-community/blob/master/data/t2-ru
 t2.ru
 
 #3 Сбермобайл
