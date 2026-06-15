@@ -6,6 +6,7 @@ rzd-bonus.ru
 tutu.ru
 
 #2 навигатор 2ГИС
+https://github.com/v2fly/domain-list-community/blob/master/data/2gis
 2gis.com
 2gis.ru
 2gis.ae
@@ -30,7 +31,3 @@ travel2moscow.com
 
 #mt Отелло
 otello.ru
-
-
-
-

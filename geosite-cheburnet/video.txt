@@ -1,4 +1,5 @@
 #1 Rutube
+https://github.com/v2fly/domain-list-community/blob/master/data/rutube
 rutube.ru
 rutubelist.ru
 rtbcdn.ru
@@ -8,12 +9,14 @@ kinopoisk.ru
 kinopoisk-ru.clstorage.net
 
 #3 онлайн-кинотеатр Окко
+https://github.com/v2fly/domain-list-community/blob/master/data/okko
 okko.tv
 
 #4 онлайн-кинотеатр «Иви»
 ivi.ru
 
 #4 онлайн-кинотеатр «Винк»
+https://github.com/v2fly/domain-list-community/blob/master/data/wink
 wink.ru
 
 #4 онлайн-кинотеатр «Кион»

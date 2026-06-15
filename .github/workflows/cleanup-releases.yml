@@ -1,0 +1,43 @@
+name: Cleanup old releases
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * 0"
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Delete old releases except last 3
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "Fetching releases..."
+
+          releases=$(curl -s \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/$REPO/releases?per_page=100")
+
+          ids=$(echo "$releases" | jq -r '. | sort_by(.created_at) | reverse | .[3:] | .[].id')
+
+          if [ -z "$ids" ]; then
+            echo "Nothing to delete."
+            exit 0
+          fi
+
+          for id in $ids; do
+            echo "Deleting release id=$id"
+            curl -s -X DELETE \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$REPO/releases/$id"
+          done
+
+          echo "Cleanup complete."

@@ -1,3 +1,5 @@
+https://github.com/v2fly/domain-list-community/blob/master/data/yandex
+
 #1 Сервисы Яндекса
 
 # яндекс.рф

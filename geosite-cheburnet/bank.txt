@@ -1,3 +1,5 @@
+https://github.com/v2fly/domain-list-community/blob/master/data/category-bank-ru
+
 #1 Официальный сайт платёжной системы Мир
 mirpayonline.ru
 

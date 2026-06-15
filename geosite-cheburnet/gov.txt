@@ -1,3 +1,5 @@
+https://github.com/v2fly/domain-list-community/blob/master/data/category-gov-ru
+
 #1 Федеральные
 government.ru
 gov.ru

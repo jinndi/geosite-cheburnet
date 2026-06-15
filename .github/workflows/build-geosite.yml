@@ -14,53 +14,126 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.x'
+        python-version: '3.12'
 
     - name: Process domain files
       run: |
         python << 'EOF'
         import os
         import json
-        
-        # Собираем все домены из файлов
+        import urllib.request
+        import urllib.error
+
         domains = set()
-        total_lines = 0
+        stats = {"total_lines": 0}
         
-        for filename in os.listdir('geosite-cheburnet'):
-          if filename.endswith('.txt'):
-            with open(f'geosite-cheburnet/{filename}', 'r', encoding='utf-8') as f:
-              for line in f:
-                line = line.strip()
-                # Пропускаем пустые строки и комментарии
-                if line and not line.startswith('#'):
-                  total_lines += 1
-                  domain = line.lower().strip()
-                  if domain.endswith('.'):
-                    domain = domain[:-1]
-                  if domain.startswith('www.'):
-                    domain = domain[4:]
-                  if domain and "." in domain:
-                    domains.add(domain)
-        
-        # Сортируем домены
+        # --- УДАЛЕННЫЙ РЕПОЗИТОРИЙ v2fly ---
+        REMOTE_BASE_URL = "https://github.com/v2fly/domain-list-community/raw/refs/heads/master/data/"
+
+        def download_and_process(url):
+            try:
+                req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req, timeout=15) as response:
+                    return response.read().decode('utf-8')
+            except urllib.error.HTTPError as e:
+                if e.code == 404:
+                    print(f"Файл не найден (404): {url}")
+                else:
+                    print(f"Ошибка HTTP {e.code} при запросе: {url}")
+            except Exception as e:
+                print(f"Ошибка сети при запросе {url}: {e}")
+            return None
+
+        def process_line(line):
+            line = line.strip()
+
+            # 1. Заменяем возможные неразрывные пробелы (\xa0) на обычные
+            line = line.replace('\xa0', ' ').strip()
+            
+            # 2. Отрезаем любые комментарии в конце строки (все, что после #)
+            if '#' in line:
+                line = line.split('#')[0].strip()
+
+            # 3. Пропускаем пустые строки и комментарии
+            if not line or line.startswith('#'):
+                return
+
+            # 4. Пропускаем рекламу И трекеры (@ads)
+            if '@ads' in line:
+                return
+
+            # 5. Если строка - это прямая ссылка на другой веб-файл (полный URL)
+            if line.startswith('http://') or line.startswith('https://'):
+                print(f"Обнаружена прямая ссылка, скачиваю: {line}")
+                content = download_and_process(line)
+                if content:
+                    for sub_line in content.splitlines():
+                        process_line(sub_line)
+                return
+
+            # 6. Обработка "include:filename" из удаленного репозитория
+            if line.startswith('include:'):
+                include_name = line.split('include:')[1].strip()
+                include_url = f"{REMOTE_BASE_URL}{include_name}"
+                
+                print(f"Запрос удаленного include файла: {include_url}")
+                content = download_and_process(include_url)
+                if content:
+                    print(f"Успешно подключен удаленный файл: {include_name}")
+                    for sub_line in content.splitlines():
+                        process_line(sub_line)
+                return
+
+            # 7. Очистка префиксов "full:" и "domain:"
+            if line.startswith('full:'):
+                line = line.split('full:')[1]
+            elif line.startswith('domain:'):
+                line = line.split('domain:')[1]
+
+            # 8. Очищаем от возможных пробелов и комментариев в конце строки (если они остались)
+            if ' ' in line:
+                line = line.split()[0]
+
+            # 9. Финальная очистка и валидация домена
+            stats["total_lines"] += 1
+            domain = line.lower().strip()
+            
+            if domain.endswith('.'):
+                domain = domain[:-1]
+            if domain.startswith('www.'):
+                domain = domain[4:]
+                
+            if domain and "." in domain:
+                domains.add(domain)
+
+        # Старт обработки локальных файлов из папки
+        folder = 'geosite-cheburnet'
+        if os.path.exists(folder):
+            for filename in os.listdir(folder):
+                if filename.endswith('.txt'):
+                    print(f"Читаю стартовый файл: {filename}")
+                    with open(os.path.join(folder, filename), 'r', encoding='utf-8') as f:
+                        for line in f:
+                            process_line(line)
+        else:
+            print(f"Предупреждение: Стартовая папка {folder} не найдена!")
+
+        # Сортировка и удаление поддоменов
         domain_list = sorted(list(domains))
-        
-        # Удаляем поддомены (оставляем только родительские домены)
-        # Сначала получаем все потенциальные родительские домены (самые короткие)
         all_domains_set = set(domain_list)
         unique_domains = []
         for d in domain_list:
-          is_subdomain = False
-          for u in all_domains_set:
-            if d != u and d.endswith('.' + u):
-              is_subdomain = True
-              break
-          if not is_subdomain:
-            unique_domains.append(d)
+            is_subdomain = False
+            for u in all_domains_set:
+                if d != u and d.endswith('.' + u):
+                    is_subdomain = True
+                    break
+            if not is_subdomain:
+                unique_domains.append(d)
         
-        # Создаем JSON-структуру
+        # Создаем JSON
         result = {
           "version": 3,
           "rules": [{
@@ -68,18 +141,15 @@ jobs:
           }]
         }
         
-        # Записываем в файл
         with open('geosite-cheburnet.json', 'w', encoding='utf-8') as f:
           json.dump(result, f, ensure_ascii=False, indent=2)
         
-        print(f"Итог {len(unique_domains)} уникальных доменов (из {total_lines} исходных)")
+        print(f"Итог {len(unique_domains)} уникальных доменов (из {stats['total_lines']} валидных исходных строк)")
         EOF
 
     - name: Install sing-box
       run: |
-        # Получаем последнюю версию sing-box
         VERSION=$(curl -s https://api.github.com/repos/SagerNet/sing-box/releases/latest | grep "tag_name" | cut -d '"' -f 4)
-        # Убираем префикс 'v' из версии
         VERSION=${VERSION#v}
         wget https://github.com/SagerNet/sing-box/releases/download/v$VERSION/sing-box-$VERSION-linux-amd64.tar.gz
         tar -xzf sing-box-$VERSION-linux-amd64.tar.gz
@@ -101,6 +171,20 @@ jobs:
         ")
         echo "count=$COUNT" >> $GITHUB_OUTPUT
 
+    - name: Commit files to repository
+      env:
+        TZ: "Europe/Moscow"
+      run: |
+        if [ -z "$(git status --porcelain geosite-cheburnet.json geosite-cheburnet.srs)" ]; then
+          echo "No changes in generated files; skipping commit."
+        else
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add geosite-cheburnet.json geosite-cheburnet.srs
+          git commit -m "[auto] Update geosite-cheburnet $(date '+%Y-%m-%d %H:%M:%S')"
+          git push
+        fi
+
     - name: Create Release
       uses: softprops/action-gh-release@v2
       with:
@@ -116,4 +200,3 @@ jobs:
           - geosite-cheburnet.srs: Sing-box rule_set формат
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
