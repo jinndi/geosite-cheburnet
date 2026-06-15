@@ -36,7 +36,15 @@
 
 `all` упомянуто у всех ОПСОСов
 
-### Ссылка на последню актуальную версию:
+### Ссылки на последню актуальную версию:
+
+```
+https://cdn.jsdelivr.net/gh/jinndi/geosite-cheburnet@main/geosite-cheburnet.srs
+```
+
+```
+https://github.com/jinndi/geosite-cheburnet/raw/main/geosite-cheburnet.srs
+```
 
 ```
 https://github.com/jinndi/geosite-cheburnet/releases/latest/download/geosite-cheburnet.srs
