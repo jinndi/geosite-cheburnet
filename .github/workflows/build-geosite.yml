@@ -2,6 +2,9 @@ name: Build Geosite
 
 on:
   workflow_dispatch:
+  schedule:
+    # Запуск в 06:37 UTC (09:37 МСК) раз в 3 дня
+    - cron: '37 6 */3 * *'
 
 jobs:
   build:
