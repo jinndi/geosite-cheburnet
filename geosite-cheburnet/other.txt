@@ -32,6 +32,7 @@ rosseti.ru
 atomen.ru
 
 #4 портал для вакансий и поиска работы HeadHunter
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/headhunter
 hh.ru
 
 #4 «Деловые линии»
@@ -59,6 +60,7 @@ res-nsdi.ru
 auth-nsdi.ru
 
 #5 служба доставки «Сдэк»
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/cdek
 cdek.ru
 
 #5 служба доставки «Купер»
@@ -75,6 +77,7 @@ tensor.ru
 tensor-sbis.ru
 
 #5 оператор электронного документооборота «СКБ Контур»
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/kontur
 kontur.ru
 diadoc.ru
 

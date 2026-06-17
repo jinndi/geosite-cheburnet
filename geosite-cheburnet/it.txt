@@ -12,3 +12,7 @@ aoglonass.ru
 hr-link.ru
 carrotquest.app
 sologpt.ru
+
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/tilda
+
+https://raw.githubusercontent.com/v2fly/domain-list-community/refs/heads/master/data/timeweb
