@@ -186,6 +186,8 @@ jobs:
           git add geosite-cheburnet.json geosite-cheburnet.srs
           git commit -m "[auto] Update geosite-cheburnet $(date '+%Y-%m-%d %H:%M:%S')"
           git push
+
+          curl -sfL "https://purge.jsdelivr.net/gh/jinndi/geosite-cheburnet@main/geosite-cheburnet.srs"
         fi
 
     - name: Create Release
