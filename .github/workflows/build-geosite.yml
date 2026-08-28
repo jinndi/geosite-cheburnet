@@ -176,11 +176,13 @@ jobs:
         echo "count=$COUNT" >> $GITHUB_OUTPUT
 
     - name: Commit files to repository
+      id: check_changes
       env:
         TZ: "Europe/Moscow"
       run: |
         if [ -z "$(git status --porcelain geosite-cheburnet.json geosite-cheburnet.srs)" ]; then
           echo "No changes in generated files; skipping commit."
+          echo "changed=false" >> $GITHUB_OUTPUT
         else
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -189,9 +191,11 @@ jobs:
           git push
 
           curl -sfL "https://purge.jsdelivr.net/gh/jinndi/geosite-cheburnet@main/geosite-cheburnet.srs"
+          echo "changed=true" >> $GITHUB_OUTPUT
         fi
 
     - name: Create Release
+      if: steps.check_changes.outputs.changed == 'true'
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v1.${{ github.run_number }}
