@@ -36,3 +36,14 @@ vtbmobile.ru
 nextmobile.ru
 next-mobile.ru
 webim.ru
+
+# Для работы VoWiFi нужно открыть доступ до ePBG шлюзов операторов (порты 500, 4500)
+
+# МТС
+epdg.epc.mnc001.mcc250.pub.3gppnetwork.org
+# Мегафон 
+epdg.epc.mnc002.mcc250.pub.3gppnetwork.org
+# Билайн
+epdg.epc.mnc099.mcc250.pub.3gppnetwork.org
+# Теле2
+epdg.epc.mnc020.mcc250.pub.3gppnetwork.org
